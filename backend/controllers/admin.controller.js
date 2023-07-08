@@ -12,6 +12,16 @@ const  ExpertsGet = async(req,res) => {
     }
 }
 
+const StudentsGet = async(req,res) =>{
+    try {
+        const data = await pg("select * from studentssay");
+        res.status(200).json(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 const ExpertsPost = async(req,res)=>{
     try {
         const { name,field } = req.body;
@@ -121,5 +131,6 @@ const  CoursesUpdate = async(req,res) => {
         CoursesDelete,
         CoursesGet,
         CoursesPost,
-        CoursesUpdate
+        CoursesUpdate,
+        StudentsGet
     }

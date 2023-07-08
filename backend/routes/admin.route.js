@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { ExpertsDelete,ExpertsGet,ExpertsPost,ExpertsUpdate,CoursesDelete,CoursesGet,CoursesPost,CoursesUpdate } = require('../controllers/admin.controller');
+const { ExpertsDelete,ExpertsGet,ExpertsPost,ExpertsUpdate,CoursesDelete,CoursesGet,CoursesPost,CoursesUpdate,StudentsGet } = require('../controllers/admin.controller');
 const { Auth } = require('../controllers/auth.comtroller');
 const router = Router()
 
@@ -11,6 +11,7 @@ router.post('/api/course/post',Auth,CoursesPost)
 router.get('/api/course/get',Auth ,CoursesGet)
 router.delete('/api/course/delete/:id',Auth,CoursesDelete)
 router.put('/api/course/put',Auth,CoursesUpdate)
+router.get('/api/students/get',Auth,StudentsGet)
 
 
 module.exports = router
